@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Formulaire Abscence</title>
+
+    <link href="/dist/output.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../styles.css" />
+    <link href="monStyle.css" rel="stylesheet" />
+  </head>
+  <body>
+    <header class="col-span-2">
+      <div class="grid grid-cols-9 grid-rows-9">
+        <div class="enTete">
+          <h1>Autorisation d’Absence</h1>
+        </div>
+      </div>
+      <div class="div-interligne"><br /><label for="">&nbsp </label></div>
+      <h2 class="mt-2">Identification</h2>
+      <div
+        class="col-span-3 row-span-1 border border-gray-300 flex items-center px-2 mt-4 ml-4"
+      >
+        <label for="nom" class="mr-7">Nom:</label>
+        <input type="text" id="nom" class="custom-input mx-auto my-auto" />
+      </div>
+      <div
+        class="col-span-3 row-span-1 border border-gray-300 flex items-center px-2 mt-4 ml-4"
+      >
+        <label for="prenom" class="mr-2">Prénom:</label>
+        <input type="text" id="prenom" class="custom-input mx-auto my-auto" />
+      </div>
+      <div
+        class="col-span-3 row-span-1 border border-gray-300 flex items-center px-2 mt-4 ml-4 mb-4"
+      >
+        <label for="formation" class="mr-2">Formation:</label>
+        <select
+          id="formation"
+          class="bg-gray-200 focus:bg-gray-200 border-gray-300 focus:border-blue-500 rounded-md px-2 py-1 mx-auto my-auto w-5/11"
+        >
+          <option value="CDA">CDA</option>
+          <option value="DWWM">DWWM</option>
+          <option value="TSSR">TSSR</option>
+          <option value="TAI">TAI</option>
+        </select>
+      </div>
+      <div class="div-interligne"><wbr /><label for="">&nbsp </label></div>
+    </header>
+    <h2 class="mt-2">
+      Période de demande d'autorisation de s'absenter du centre
+    </h2>
+    <div class="grid grid-cols-9 grid-rows-9">
+      <div
+        class="col-span-3 row-span-1 border border-gray-300 flex items-center px-2 mt-4 ml-4"
+      >
+        <!-- Première ligne avec les boutons radios -->
+        <label>
+          <input type="radio" name="duree" value="un_jour" class="mr-2" />Un
+          jour
+        </label>
+        <label>
+          <input
+            type="radio"
+            name="duree"
+            value="plusieurs_jours"
+            class="mr-2"
+          />Plusieurs jours
+        </label>
+      </div>
+    </div>
+    <div
+      class="col-span-3 row-span-1 border border-gray-300 flex items-center px-2 mt-4"
+    >
+      <!-- Deuxième ligne avec le calendrier pour une date -->
+      <label for="date" class="mr-2">Le :</label>
+      <input
+        type="date"
+        id="date"
+        name="date"
+        class="custom-input mx-auto my-auto"
+      />
+      <!-- Ainsi que les éléments cachés pour quand Plusieurs jours est sélectionné-->
+      <label for="du" id="duLabel" style="display: none">Du :</label>
+      <input
+        type="date"
+        id="du"
+        name="du"
+        class="custom-input mx-auto my-auto"
+        style="display: none"
+      />
+      <label for="au" id="auLabel" style="display: none">Au :</label>
+      <input
+        type="date"
+        id="au"
+        name="au"
+        class="custom-input mx-auto my-auto"
+        style="display: none"
+      />
+    </div>
+    <div
+      class="col-span-3 row-span-1 border border-gray-300 flex items-center px-2 mt-4 mb-4"
+      id="ligneHeure"
+    >
+      <!-- Troisième ligne avec les inputs pour l'heure -->
+      <label for="heureDebut" class="mr-2">De :</label>
+      <input
+        type="time"
+        id="heureDebut"
+        name="heureDebut"
+        class="custom-input mx-auto my-auto"
+      />
+      <label for="heureFin" class="ml-4 mr-2">À :</label>
+      <input
+        type="time"
+        id="heureFin"
+        name="heureFin"
+        class="custom-input mx-auto my-auto"
+      />
+    </div>
+    <div class="div-interligne"><wbr /><label for="">&nbsp </label></div>
+    <h2 class="mt-2">Motif de l'abscence</h2>
+    <div id="donneesJSON" class="mb-4"></div>
+    <div class="div-interligne">
+      <wbr /><button class="Btn" style="vertical-align: middle">Valider</button
+      ><wbr />
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>

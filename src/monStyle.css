@@ -1,0 +1,179 @@
+html,
+body {
+  display: flex;
+  flex-direction: column;
+
+  align-items: stretch;
+  height: 100%;
+  margin-left: 2%;
+  margin-right: 2%;
+  font-family: Arial, sans-serif;
+  background-color: #d8d5d5;
+}
+@media print {
+  body {
+    transform: scale(0.95);
+    transform-origin: top left;
+    -webkit-print-color-adjust: exact; /* Force l'impression en noir et blanc sur certains navigateurs */
+    color-adjust: exact; /* Force l'impression en noir et blanc */
+    -webkit-filter: grayscale(100%); /* Convertit en noir et blanc */
+    filter: grayscale(100%);
+  }
+  .background {
+    display: none !important; /* Masque ces éléments en impression */
+  }
+}
+
+.enTete {
+  grid-column: span 9;
+  grid-row: span 1;
+  background-color: #d8d5d5;
+  background-image: url("../ressources/logo-afpa.png");
+  background-repeat: no-repeat;
+  background-position: right top;
+  padding-bottom: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  color: #86bd24;
+}
+
+h2 {
+  text-align: left;
+  font-size: 1.5rem;
+  color: #86bd24;
+}
+
+h3 {
+  text-align: left;
+  font-size: 1.2rem;
+  color: #86bd24;
+}
+
+.custom-input {
+  background-color: #e5e7eb;
+  border: 1px solid #d1d5db;
+  border-radius: 10px;
+  background: linear-gradient(145deg, #cacaca, #f0f0f0);
+  box-shadow: 20px 20px 60px #bebebe, -20px -20px 60px #ffffff;
+  padding: 0.5em 5%;
+}
+
+.custom-input:focus {
+  background-color: #ffffff;
+  border-color: #3b82f6;
+  outline: none;
+}
+
+input[type="checkbox"] {
+  margin-left: 1cm;
+  margin-right: 0.5em;
+  background-color: #ccc;
+  border: 1px solid #999;
+}
+
+input[type="radio"] {
+  margin-left: 1cm;
+  margin-right: 0.5em;
+  padding: 0.6em; /* Ajout de remplissage pour l'effet en relief */
+  background-color: #f0f0f0; /* Couleur de fond */
+  border: none; /* Supprimer la bordure existante */
+  border-radius: 50%; /* Rendre les radios circulaires */
+  box-shadow: 5px 5px 15px #bcbcbc, -5px -5px 15px #ffffff;
+}
+
+.div-interligne {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #86bd24;
+}
+
+.Btn {
+  width: 140px;
+  height: 40px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(
+    to right,
+    #008000,
+    #ffd277,
+    #008000,
+    #008000,
+    #ffd277,
+    #008000
+  );
+  background-size: 250%;
+  background-position: center;
+  color: #ffd277;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition-duration: 1s;
+  overflow: hidden;
+  margin-top: 0.4cm;
+  margin-bottom: 0.4cm;
+}
+
+.Btn::before {
+  position: absolute;
+  /* content: "Valider"; */
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 97%;
+  height: 90%;
+  border-radius: 8px;
+  transition-duration: 1s;
+  background-color: rgba(0, 0, 0, 0.842);
+  background-size: 200%;
+}
+
+.Btn:hover {
+  background-position: right;
+  transition-duration: 1s;
+}
+
+.Btn:hover::before {
+  background-position: right;
+  transition-duration: 1s;
+}
+
+.Btn:active {
+  transform: scale(0.95);
+}
+
+.bottom-cadre {
+  /* position: fixed; */
+  margin-left: 5%;
+  margin-right: 5%;
+  bottom: 0;
+  width: 90%;
+  height: 5cm;
+  background-color: #d8d5d5; /* Couleur du cadre */
+  border-top: 1px solid #86bd24; /* Bordure en haut du cadre */
+  border-left: 1px solid #86bd24;
+  border-right: 1px solid #86bd24;
+  border-bottom: 1px solid #86bd24;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+}
+
+.bottom-cadre h2 {
+  text-align: center;
+  margin-top: 0.2cm; /* Espace entre le haut du cadre et le texte */
+}
